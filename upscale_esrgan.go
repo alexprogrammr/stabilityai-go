@@ -9,13 +9,13 @@ import (
 	"net/http"
 )
 
-type UpscaleRequest struct {
+type UpscaleESRGANRequest struct {
 	Image  io.Reader
 	Width  int
 	Height int
 }
 
-func (c *Client) Upscale(ctx context.Context, req UpscaleRequest, out io.Writer) error {
+func (c *Client) UpscaleESRGAN(ctx context.Context, req UpscaleESRGANRequest, out io.Writer) error {
 	buff := bytes.Buffer{}
 	form := multipart.NewWriter(&buff)
 
